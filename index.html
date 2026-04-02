@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leslie Ann O'Connell | Product & Content Marketing</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --ink:#0a0f0b;
+  --ink2:#1c2e22;
+  --ink3:#3a5444;
+  --accent:#16a85a;
+  --accent-dim:#0e7a42;
+  --accent-pale:#e8f5ee;
+  --surface:#ffffff;
+  --surface2:#f5f8f6;
+  --border:rgba(0,0,0,0.08);
+  --border2:rgba(0,0,0,0.14);
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:#fff;color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);height:56px;display:flex;align-items:center;justify-content:flex-end;padding:0 60px;}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:1.45rem;color:var(--ink);text-decoration:none;letter-spacing:-0.3px;position:absolute;left:calc((100% - 1100px) / 2);}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{color:var(--ink3);text-decoration:none;font-size:0.73rem;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;transition:color 0.15s;}
+.nav-links a:hover{color:var(--accent);}
+
+/* HERO */
+.hero{padding:140px 60px 100px;position:relative;overflow:hidden;}
+.hero-noise{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");opacity:0.4;pointer-events:none;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at 20% 50%,black 0%,transparent 65%);pointer-events:none;}
+.hero-inner{position:relative;z-index:1;max-width:1100px;margin:0 auto;}
+.page-name{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--ink);letter-spacing:-0.5px;margin-bottom:16px;}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:28px;background:var(--accent-pale);border:1px solid rgba(22,168,90,0.2);border-radius:100px;padding:5px 14px 5px 5px;}
+.eyebrow-dot{width:6px;height:6px;background:var(--accent);border-radius:50%;}
+.eyebrow-text{font-size:0.7rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-dim);}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2.4rem,4.5vw,3.8rem);color:var(--ink);line-height:1.1;letter-spacing:-1px;margin-bottom:28px;}
+.hero h1 em{color:var(--accent);font-style:italic;}
+.hero-sub{font-size:1rem;color:var(--ink3);line-height:1.85;max-width:540px;margin-bottom:40px;font-weight:400;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:44px;}
+.pill{background:var(--surface2);border:1px solid var(--border2);color:var(--ink3);font-size:0.7rem;font-weight:500;padding:5px 13px;border-radius:100px;}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;padding:12px 26px;border-radius:8px;text-decoration:none;font-weight:500;font-size:0.83rem;letter-spacing:0.2px;transition:opacity 0.15s,transform 0.15s;}
+.btn-p:hover{opacity:0.85;transform:translateY(-1px);}
+.btn-s{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--border2);color:var(--ink2);padding:12px 26px;border-radius:8px;text-decoration:none;font-weight:500;font-size:0.83rem;transition:border-color 0.15s,background 0.15s;}
+.btn-s:hover{border-color:var(--accent);background:var(--accent-pale);}
+
+/* SECTIONS */
+section{padding:96px 60px;}
+.container{max-width:1100px;margin:0 auto;}
+.label{font-size:0.68rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
+h2.stitle{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--ink);margin-bottom:14px;line-height:1.15;letter-spacing:-0.5px;}
+.sdesc{font-size:0.93rem;color:var(--ink3);line-height:1.85;max-width:560px;margin-bottom:56px;}
+
+/* ABOUT */
+#about{background:var(--surface2);}
+.about-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:80px;align-items:start;}
+.about-text p{font-size:0.93rem;line-height:1.9;color:var(--ink2);margin-bottom:16px;}
+.about-text p strong{color:var(--accent-dim);font-weight:600;}
+.skills-label{font-size:0.63rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink3);margin-top:28px;margin-bottom:10px;}
+.skills{display:flex;flex-wrap:wrap;gap:6px;}
+.skill{background:#fff;border:1px solid var(--border2);color:var(--ink2);font-size:0.7rem;padding:4px 10px;border-radius:6px;}
+.hero-ctas-about{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px;}
+.stat-cards{display:flex;flex-direction:column;gap:12px;}
+.stat-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px 22px;position:relative;overflow:hidden;}
+.stat-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:var(--accent);}
+.stat-num{font-family:'DM Serif Display',serif;font-size:1.55rem;color:var(--ink);margin-bottom:4px;}
+.stat-desc{font-size:0.78rem;color:var(--ink3);line-height:1.6;}
+
+/* SUPERPOWER */
+#superpower{background:#fff;}
+.sp-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.sp-body{font-size:0.92rem;color:var(--ink3);line-height:1.9;margin-top:18px;}
+.sp-body strong{color:var(--ink);}
+.sp-items{display:flex;flex-direction:column;gap:2px;margin-top:8px;}
+.sp-item{display:grid;grid-template-columns:42px 1fr;gap:14px;padding:18px;border-radius:10px;border:1px solid transparent;text-decoration:none;transition:background 0.15s,border-color 0.15s;}
+.sp-item:hover{background:var(--surface2);border-color:var(--border2);}
+.sp-icon{width:42px;height:42px;background:var(--surface2);border:1px solid var(--border);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.sp-icon svg{width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+.sp-ititle{font-size:0.86rem;font-weight:500;color:var(--ink);margin-bottom:3px;}
+.sp-idesc{font-size:0.78rem;color:var(--ink3);line-height:1.6;}
+.sp-ilink{font-size:0.72rem;color:var(--accent);font-weight:600;margin-top:6px;display:inline-flex;align-items:center;gap:4px;}
+
+/* BUILDING BANNER */
+#building{background:var(--ink);padding:36px 60px;}
+.building-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;}
+.building-badge{background:var(--accent);color:#fff;font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 15px;border-radius:100px;white-space:nowrap;}
+.building-text{font-size:0.9rem;color:rgba(255,255,255,0.75);line-height:1.75;}
+.building-text strong{color:#fff;}
+
+/* PORTFOLIO */
+#portfolio{background:var(--surface2);}
+.filter-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:40px;}
+.filter-btn{background:#fff;border:1px solid var(--border2);color:var(--ink3);font-size:0.71rem;font-weight:500;padding:7px 16px;border-radius:100px;cursor:pointer;transition:all 0.15s;font-family:'Inter',sans-serif;}
+.filter-btn:hover,.filter-btn.active{background:var(--ink);border-color:var(--ink);color:#fff;}
+.port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+
+/* CARDS */
+.card{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform 0.2s,box-shadow 0.2s;}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,0.08);}
+.card-stripe{height:1.5px;background:var(--accent);}
+.card-head{padding:20px 20px 12px;}
+.ctype{font-size:0.62rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:7px;}
+.ctitle{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--ink);line-height:1.38;}
+.card-body{padding:0 20px 20px;flex:1;display:flex;flex-direction:column;}
+.cdesc{font-size:0.8rem;color:var(--ink3);line-height:1.75;flex:1;margin-bottom:14px;}
+.ctags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:14px;}
+.tag{background:rgba(22,168,90,0.07);border:1px solid rgba(22,168,90,0.18);color:var(--accent-dim);font-size:0.62rem;font-weight:600;padding:3px 8px;border-radius:100px;}
+.card-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:auto;}
+.btn-c{display:inline-flex;align-items:center;gap:5px;font-size:0.74rem;font-weight:500;padding:7px 14px;border-radius:7px;text-decoration:none;transition:all 0.15s;}
+.btn-cf{background:var(--ink);color:#fff;}
+.btn-cf:hover{opacity:0.82;}
+.btn-cg{background:var(--surface2);border:1px solid var(--border2);color:var(--ink2);}
+.btn-cg:hover{border-color:var(--accent);color:var(--accent);}
+.btn-c svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
+
+/* WIDE CARD */
+.card-wide{grid-column:span 2;}
+.card-wide-inner{display:grid;grid-template-columns:1fr 1fr;}
+.card-wide-right{padding:20px 20px 20px 0;display:flex;flex-direction:column;gap:11px;justify-content:center;}
+.hi{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start;}
+.hi-icon{width:34px;height:34px;background:var(--surface2);border:1px solid var(--border);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.hi-icon svg{width:14px;height:14px;stroke:var(--accent);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+.hi-text{font-size:0.78rem;color:var(--ink3);line-height:1.55;padding-top:8px;}
+.hi-text strong{color:var(--ink);}
+
+/* FEATURE CARD */
+.card-feat{grid-column:1/-1;background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;display:grid;grid-template-columns:300px 1fr;transition:transform 0.2s,box-shadow 0.2s;}
+.card-feat:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,0.08);}
+.feat-left{padding:36px 32px;display:flex;flex-direction:column;justify-content:space-between;}
+.feat-label{font-size:0.62rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:10px;}
+.feat-title{font-family:'DM Serif Display',serif;font-size:1.55rem;color:#fff;line-height:1.18;position:relative;z-index:1;}
+.feat-badge{display:inline-block;margin-top:24px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.85);font-size:0.64rem;font-weight:600;padding:4px 12px;border-radius:100px;letter-spacing:.8px;}
+.feat-right{padding:32px 36px;display:flex;flex-direction:column;justify-content:space-between;}
+.feat-right p{font-size:0.86rem;color:var(--ink2);line-height:1.85;margin-bottom:18px;}
+.feat-right p strong{color:var(--ink);font-weight:600;}
+.feat-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;}
+.feat-chip{background:var(--surface2);border:1px solid var(--border2);color:var(--ink3);font-size:0.66rem;font-weight:500;padding:3px 10px;border-radius:100px;}
+.feat-actions{display:flex;flex-wrap:wrap;gap:7px;}
+
+/* EXPERIENCE */
+#experience{background:#fff;}
+.timeline{display:flex;flex-direction:column;}
+.tl-item{display:grid;grid-template-columns:160px 1fr;gap:0;position:relative;padding-bottom:40px;}
+.tl-item:last-child{padding-bottom:0;}
+.tl-left{padding-right:28px;text-align:right;padding-top:2px;}
+.tl-date{font-size:0.72rem;font-weight:500;color:var(--ink3);line-height:1.6;}
+.tl-line{position:absolute;left:160px;top:10px;bottom:0;width:1px;background:var(--border2);}
+.tl-item:last-child .tl-line{display:none;}
+.tl-dot{position:absolute;left:160px;top:5px;width:10px;height:10px;background:var(--accent);border:2px solid #fff;border-radius:50%;transform:translateX(-4.5px);}
+.tl-right{padding-left:28px;}
+.tl-role{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--ink);margin-bottom:2px;}
+.tl-co{font-size:0.77rem;font-weight:600;color:var(--accent);margin-bottom:9px;}
+.tl-desc{font-size:0.81rem;color:var(--ink3);line-height:1.8;}
+.tl-desc strong{color:var(--accent-dim);}
+
+/* CONTACT */
+#contact{background:var(--surface2);text-align:center;}
+.contact-links{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:8px;}
+.contact-link{display:inline-flex;align-items:center;gap:8px;color:var(--ink2);font-size:0.83rem;font-weight:500;text-decoration:none;background:#fff;border:1px solid var(--border2);padding:11px 20px;border-radius:8px;transition:all 0.15s;}
+.contact-link svg{width:15px;height:15px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+.contact-link:hover{border-color:var(--accent);background:var(--accent-pale);}
+footer{background:#fff;border-top:1px solid var(--border);text-align:center;padding:24px;font-size:0.71rem;color:var(--ink3);}
+
+@media(max-width:1024px){.port-grid{grid-template-columns:1fr 1fr;}.card-wide{grid-column:span 2;}.about-grid,.sp-inner{grid-template-columns:1fr;}}
+@media(max-width:768px){nav{padding:0 20px;}.nav-links{display:none;}section,#building{padding:64px 24px;}.hero{padding:96px 24px 64px;}.port-grid{grid-template-columns:1fr;}.card-wide{grid-column:span 1;}.card-wide-inner{grid-template-columns:1fr;}.card-wide-right{padding:0 20px 20px;}.card-feat{grid-template-columns:1fr;}.tl-item{grid-template-columns:1fr;}.tl-line,.tl-dot{display:none;}.tl-left{text-align:left;padding-right:0;padding-bottom:4px;}.tl-right{padding-left:0;}.building-inner{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">Leslie Ann O'Connell</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="page-name" style="display:none;">Leslie Ann O'Connell</div>
+    <div class="eyebrow" style="margin-bottom:24px;"><div class="eyebrow-dot"></div><div class="eyebrow-text">Senior Product &amp; Content Marketing</div></div>
+    <h1 style="font-family:'DM Serif Display',serif;font-size:clamp(2.4rem,4.5vw,3.8rem);color:var(--ink);line-height:1.1;letter-spacing:-1px;margin-bottom:56px;">Strategy, messaging, <em style="color:var(--accent);font-style:italic;">and results.</em></h1>
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="label">About Me</div>
+        <p>A senior marketing professional with deep expertise in <strong>product marketing, content strategy, and go-to-market execution</strong>. A career that started in enterprise sales means a deep understanding of the full revenue funnel and what it takes to move buyers from awareness to close.</p>
+        <p>Specialized in complex technical domains — <strong>digital twins, visual intelligence, edge computing, and data and AI</strong> — with deep vertical experience across manufacturing, energy and utilities, and oil and gas, where the difference between good marketing and great marketing is the ability to translate deep technical knowledge into positioning that resonates with both technical buyers and executive stakeholders.</p>
+        <p>From building <strong>AI-powered agents</strong> to streamline marketing and sales workflows, to leading <strong>AEO/AIO programs</strong> for compounding organic growth, to serving as the <strong>point person for NVIDIA GTC and Google Next</strong> every year, owning the messaging strategy and content development across both.</p>
+        <div class="skills-label">Tools &amp; Skills</div>
+        <div class="skills">
+          <span class="skill">Product Positioning</span><span class="skill">Messaging Frameworks</span><span class="skill">AEO / AIO</span><span class="skill">Content Gap Analysis</span><span class="skill">Sales Enablement</span><span class="skill">Campaign Management</span><span class="skill">Competitive Intelligence</span><span class="skill">Buyer Journey Mapping</span><span class="skill">Win/Loss Analysis</span><span class="skill">Sales Playbooks</span><span class="skill">UX Writing</span><span class="skill">Salesforce</span><span class="skill">SEMrush</span><span class="skill">HubSpot</span><span class="skill">Google Analytics</span><span class="skill">Asana</span><span class="skill">AI Agent Development</span>
+        </div>
+        <div class="hero-ctas-about">
+          <a href="#portfolio" class="btn-p">View My Work <svg style="width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="#contact" class="btn-s">Get in Touch</a>
+        </div>
+      </div>
+      <div class="stat-cards">
+        <div class="stat-card"><div class="stat-num">15+</div><div class="stat-desc">Years in SaaS &amp; technology marketing, from sales to senior strategist</div></div>
+        <div class="stat-card"><div class="stat-num">Sales Roots</div><div class="stat-desc">A career that started in enterprise sales brings a revenue-focused perspective to every marketing decision.</div></div>
+        <div class="stat-card"><div class="stat-num">GTC Every Year</div><div class="stat-desc">Annual point person for NVIDIA GTC and Google Next, owning the messaging strategy, content development, video scripts, and business talking points.</div></div>
+        <div class="stat-card"><div class="stat-num">AI in Practice</div><div class="stat-desc">Building AI agents and workflows that make marketing and sales teams faster, and writing about AI topics across data, manufacturing, and enterprise technology.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPERPOWER -->
+<section id="superpower" style="background:#fff;padding:96px 60px;">
+  <div class="container">
+    <div class="sp-inner">
+      <div>
+        <div class="label">A Unique Skill</div>
+        <h2 class="stitle">I turn engineers into thought leaders.</h2>
+        <p class="sp-body">One of the most distinctive parts of my work is translating complex technical subject matter, often written by brilliant non-native English speakers, into thought leadership that <strong>business audiences read, share, and act on.</strong><br><br>It requires equal parts technical fluency, editorial judgment, and strategic positioning. The result is content that builds credibility for both the brand and the expert behind it.</p>
+      </div>
+      <div class="sp-items">
+        <a href="https://www.softserveinc.com/en-us/blog/free-flying-lunar-drones-and-their-crucial-role" target="_blank" class="sp-item">
+          <div class="sp-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></div>
+          <div><div class="sp-ititle">Free-Flying Lunar Drones and Their Crucial Role in Moon Exploration</div><div class="sp-idesc">Rewritten from engineering research on autonomous lunar drone navigation into a thought leadership piece for a broad technology audience.</div><div class="sp-ilink">Read article →</div></div>
+        </a>
+        <a href="https://www.softserveinc.com/en-us/blog/time-travelers-guide-digital-twins-metaverse" target="_blank" class="sp-item">
+          <div class="sp-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+          <div><div class="sp-ititle">A Time Traveler's Guide to Digital Twins in the Industrial Metaverse</div><div class="sp-idesc">Transformed a complex engineering perspective on digital twin simulation into an accessible, forward-looking industry blog.</div><div class="sp-ilink">Read article →</div></div>
+        </a>
+        <a href="https://info.softserveinc.com/hubfs/files/mastering-software-development.pdf" target="_blank" class="sp-item">
+          <div class="sp-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+          <div><div class="sp-ititle">Mastering Software Development</div><div class="sp-idesc">Turned a dense technical white paper on software engineering practices into a polished, readable guide for business and technical audiences alike.</div><div class="sp-ilink">Download PDF →</div></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUILDING BANNER -->
+<div id="building">
+  <div class="building-inner">
+    <div class="building-badge">Currently Building</div>
+    <div class="building-text">Developing <strong>AI agents designed for sales and content teams</strong>, tools that handle research, first-draft generation, and sales enablement prep so humans can focus on strategy and relationships. Also running <strong>AEO/AIO optimization projects</strong> built for the way AI models now surface and rank content.</div>
+  </div>
+</div>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="container">
+    <div class="label">Portfolio</div>
+    <h2 class="stitle">Selected Work</h2>
+    <p class="sdesc">A selection of go-to-market programs, product launches, campaigns, and content across data, AI, manufacturing, energy, and enterprise software.</p>
+    <div style="background:var(--surface2);border:1px solid var(--border2);border-radius:9px;padding:12px 18px;margin-bottom:32px;font-size:0.78rem;color:var(--ink3);line-height:1.6;"><strong style="color:var(--ink);">A note on this work:</strong> All written assets shown here — whitepapers, case studies, landing pages, campaign copy, and resources — were written by me. The Warehouse of the Future interactive HTML experience is also my own work, built and designed by me. Visual design for all other assets was handled by our design team.</div>
+    <div class="filter-row">
+      <button class="filter-btn active" onclick="filterCards('all',this)">All Work</button>
+      <button class="filter-btn" onclick="filterCards('data-ai',this)">Data &amp; AI</button>
+      <button class="filter-btn" onclick="filterCards('manufacturing',this)">Manufacturing</button>
+      <button class="filter-btn" onclick="filterCards('energy',this)">Energy</button>
+      <button class="filter-btn" onclick="filterCards('cloud',this)">Cloud</button>
+      <button class="filter-btn" onclick="filterCards('retail',this)">Retail</button>
+      <button class="filter-btn" onclick="filterCards('nvidia',this)">NVIDIA / GTC</button>
+      <button class="filter-btn" onclick="filterCards('nuvolo',this)">Nuvolo / Workplace</button>
+    </div>
+    <div class="port-grid" id="portGrid">
+
+      <!-- Warehouse of the Future -->
+      <div class="card-feat" data-tags="nvidia manufacturing">
+        <div class="feat-left" style="background:linear-gradient(150deg,#162b1c 0%,#0a1610 100%);">
+          <div>
+            <div class="feat-label">Interactive Sales Experience — NVIDIA GTC</div>
+            <div class="feat-title">Warehouse of the Future</div>
+          </div>
+          <div class="feat-badge">Touch Screen · Sales Enablement · Live</div>
+        </div>
+        <div class="feat-right">
+          <div>
+            <p>Recognizing that traditional PowerPoints couldn't support the kind of dynamic, buyer-led conversations that happen on a trade show floor, I made the call to retire the slide deck entirely and build something better. I conceived and created a <strong>custom interactive HTML presentation</strong> designed to run on a touch screen during live sales conversations, giving reps the ability to navigate by topic in real time.</p>
+            <p>Built for NVIDIA GTC to showcase SoftServe's warehouse automation and robotics capabilities, the experience covers AI-powered vision, autonomous mobile robots, and intelligent logistics.</p>
+            <div class="feat-chips">
+              <span class="feat-chip">Sales Enablement</span><span class="feat-chip">Interactive Presentation</span><span class="feat-chip">NVIDIA GTC</span><span class="feat-chip">Warehouse Automation</span><span class="feat-chip">Robotics</span><span class="feat-chip">Trade Show</span>
+            </div>
+            <div class="feat-actions">
+              <a href="https://leslieoc89.github.io/WarehouseKiosk/" target="_blank" class="btn-c btn-cf">Launch Experience <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Could Talk -->
+      <div class="card card-wide" data-tags="nvidia manufacturing">
+        <div class="card-stripe"></div>
+        <div class="card-wide-inner">
+          <div>
+            <div class="card-head"><div class="ctype">Interactive Asset — NVIDIA GTC</div><div class="ctitle">What If Your Video Could Talk?</div></div>
+            <div class="card-body">
+              <p class="cdesc">Built for NVIDIA GTC, this interactive asset showcases real-world manufacturing solutions powered by NVIDIA AI Blueprint for Video Search and Summarization. Covers four production use cases across the modern factory floor.</p>
+              <div class="ctags"><span class="tag">NVIDIA</span><span class="tag">Manufacturing</span><span class="tag">Video AI</span><span class="tag">Interactive</span></div>
+              <div class="card-actions"><a href="https://softserve.turtl.co/story/what-if-your-video-could-talk/page/1" target="_blank" class="btn-c btn-cf">View Asset <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+            </div>
+          </div>
+          <div class="card-wide-right">
+            <div class="hi"><div class="hi-icon"><svg viewBox="0 0 24 24"><path d="M15 10l4.553-2.069A1 1 0 0 1 21 8.82v6.361a1 1 0 0 1-1.447.894L15 14"/><rect x="1" y="6" width="15" height="12" rx="2"/></svg></div><div class="hi-text"><strong>Knowledge Capture</strong> — using video AI to preserve expert knowledge on the shop floor</div></div>
+            <div class="hi"><div class="hi-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div class="hi-text"><strong>Visual Quality Inspection</strong> — AI-powered defect detection in manufacturing lines</div></div>
+            <div class="hi"><div class="hi-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="hi-text"><strong>Worker Safety</strong> — real-time video monitoring for hazard detection and compliance</div></div>
+            <div class="hi"><div class="hi-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div class="hi-text"><strong>Intelligent Video Analytics</strong> — turning operational footage into actionable intelligence</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paint Booth -->
+      <div class="card" data-tags="manufacturing energy">
+        <div class="card-stripe"></div>
+        <div class="card-head"><div class="ctype">Case Study — Manufacturing / Energy</div><div class="ctitle">The Data Architecture Behind Smarter Automotive Paint Booths</div></div>
+        <div class="card-body">
+          <p class="cdesc">How data architecture and AI-powered digital twins help automotive manufacturers optimize paint booth operations, reduce energy consumption, and improve throughput without disrupting production lines.</p>
+          <div class="ctags"><span class="tag">Digital Twin</span><span class="tag">Automotive</span><span class="tag">Energy</span><span class="tag">Manufacturing</span></div>
+          <div class="card-actions"><a href="https://www.softserveinc.com/en-us/resources/ai-digital-twin-paint-booth-energy-reduction" target="_blank" class="btn-c btn-cf">View Resource <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+        </div>
+      </div>
+
+      <!-- Retail -->
+      <div class="card" data-tags="retail">
+        <div class="card-stripe"></div>
+        <div class="card-head"><div class="ctype">Campaign Landing Page — Retail</div><div class="ctitle">GenAI Retail Shopping Assistant</div></div>
+        <div class="card-body">
+          <p class="cdesc">A trade show landing page describing SoftServe's generative AI retail shopping assistant demo, written to communicate how conversational AI changes the product discovery and purchasing journey for consumers and retailers alike.</p>
+          <div class="ctags"><span class="tag">Retail</span><span class="tag">Generative AI</span><span class="tag">Campaign Copy</span><span class="tag">Landing Page</span></div>
+          <div class="card-actions"><a href="https://shopassistant.softserveinc.com/" target="_blank" class="btn-c btn-cf">View Page <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+        </div>
+      </div>
+
+      <!-- Budderfly -->
+      <div class="card" data-tags="energy">
+        <div class="card-stripe"></div>
+        <div class="card-head"><div class="ctype">Case Study — Energy</div><div class="ctitle">Budderfly: AI-Powered Energy as a Service</div></div>
+        <div class="card-body">
+          <p class="cdesc">How Budderfly uses AI to deliver superior energy-as-a-service results for their clients, reducing energy costs and consumption at scale through intelligent monitoring and optimization across distributed commercial sites.</p>
+          <div class="ctags"><span class="tag">Energy</span><span class="tag">AI</span><span class="tag">Case Study</span><span class="tag">EaaS</span></div>
+          <div class="card-actions"><a href="https://www.softserveinc.com/files/cases/budderfly-uses-ai-to-deliver-superior-energy-as-a-service-results-for-their-clients.pdf" target="_blank" class="btn-c btn-cf">Download PDF <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a></div>
+        </div>
+      </div>
+
+      <!-- Cross-Cloud -->
+      <div class="card" data-tags="cloud data-ai">
+        <div class="card-stripe"></div>
+        <div class="card-head"><div class="ctype">Resource — Cloud Modernization</div><div class="ctitle">Rapid Cross-Cloud Application Modernization with SAMP</div></div>
+        <div class="card-body">
+          <p class="cdesc">How SoftServe's SAMP framework accelerates cross-cloud application modernization, helping organizations migrate and modernize legacy applications quickly and with lower risk across AWS, Google Cloud, and Microsoft Azure.</p>
+          <div class="ctags"><span class="tag">Cloud</span><span class="tag">Modernization</span><span class="tag">Multi-Cloud</span></div>
+          <div class="card-actions"><a href="https://www.softserveinc.com/en-us/resources/rapid-cross-cloud-application-modernization" target="_blank" class="btn-c btn-cf">View Resource <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+        </div>
+      </div>
+
+      <!-- Data Readiness Campaign -->
+      <div class="card-feat" data-tags="data-ai">
+        <div class="feat-left" style="background:linear-gradient(150deg,#0e1e30 0%,#071320 100%);">
+          <div>
+            <div class="feat-label">Campaign — Data &amp; AI</div>
+            <div class="feat-title">Data Readiness Campaign</div>
+          </div>
+          <div class="feat-badge">Whitepapers · Playbook · Workbook · Paid Media</div>
+        </div>
+        <div class="feat-right">
+          <div>
+            <p>A multi-asset demand generation campaign built around a single narrative: <strong>most AI initiatives fail because the data isn't ready.</strong> Each asset addressed a different stage of the buyer journey, with paid media behind the campaign to drive leads and pipeline. Later extended into the Google partnership with two co-developed assets.</p>
+            <div class="feat-chips">
+              <span class="feat-chip">Campaign Strategy</span><span class="feat-chip">Content Development</span><span class="feat-chip">Paid Media</span><span class="feat-chip">Data Readiness</span><span class="feat-chip">AI Strategy</span><span class="feat-chip">Google Partnership</span><span class="feat-chip">Demand Generation</span>
+            </div>
+            <div class="feat-actions">
+              <a href="https://info.softserveinc.com/the-playbook-for-data-kick-start-data-success" target="_blank" class="btn-c btn-cg">The Playbook for Data That Wins <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+              <a href="https://info.softserveinc.com/how-to-launch-your-own-data-roi-lab" target="_blank" class="btn-c btn-cg">Data ROI Lab <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+              <a href="https://info.softserveinc.com/transform-ideas-into-mlp-concepts" target="_blank" class="btn-c btn-cg">MLP Workbook <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+              <a href="https://info.softserveinc.com/build-and-scale-an-ai-agent-workforce-with-gemini-enterprise-whitepaper" target="_blank" class="btn-c btn-cg">AI Agent Workforce — Google <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+              <a href="https://info.softserveinc.com/what-happens-to-stored-procedures-in-a-cloud-migration" target="_blank" class="btn-c btn-cg">Stored Procedures — Google Cloud <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Lake -->
+      <div class="card card-wide" data-tags="data-ai">
+        <div class="card-stripe"></div>
+        <div class="card-wide-inner">
+          <div>
+            <div class="card-head"><div class="ctype">White Paper — Data Strategy</div><div class="ctitle">A Strategic Guide to Future-Proofing Your Data Lake</div></div>
+            <div class="card-body">
+              <p class="cdesc">Despite growing investment, many organizations remain stuck in AI pilot mode, unable to scale into real business impact. This white paper explores what it means to be AI-ready, why traditional data lakes often fall short, and what modern AI workloads demand from data platforms.</p>
+              <div class="ctags"><span class="tag">Data Strategy</span><span class="tag">AI Readiness</span><span class="tag">White Paper</span></div>
+              <div class="card-actions"><a href="https://2744722.hs-sites.com/hubfs/files/strategic-guide-to-future-proofing-your-data-lake.pdf" target="_blank" class="btn-c btn-cf">Download PDF <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a></div>
+            </div>
+          </div>
+          <div class="card-wide-right">
+            <div class="hi"><div class="hi-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><div class="hi-text"><strong>Five-pillar framework</strong> for evolving data lakes into AI-ready platforms without disruption</div></div>
+            <div class="hi"><div class="hi-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div class="hi-text"><strong>AI readiness focus</strong> on governance, automation, and trust as mission-critical layers</div></div>
+            <div class="hi"><div class="hi-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="hi-text"><strong>Written for CDOs and data engineering leads</strong> under pressure to move AI to production</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Digital Twins DC -->
+      <div class="card" data-tags="manufacturing data-ai">
+        <div class="card-stripe"></div>
+        <div class="card-head"><div class="ctype">White Paper — Supply Chain</div><div class="ctitle">A Practical Guide to Digital Twins for Distribution Centers</div></div>
+        <div class="card-body">
+          <p class="cdesc">Rising labor costs, tighter delivery windows, constant pressure to do more with less. This guide shows how digital twins and simulation let you test layouts, labor strategies, and automation before anything hits the floor.</p>
+          <div class="ctags"><span class="tag">Digital Twins</span><span class="tag">Supply Chain</span><span class="tag">Automation</span></div>
+          <div class="card-actions"><a href="https://2744722.hs-sites.com/hubfs/files/practical-guide-to-using-digital-twins-in-your-distribution-center.pdf" target="_blank" class="btn-c btn-cf">Download PDF <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a></div>
+        </div>
+      </div>
+
+      <!-- Nuvolo Rebrand -->
+      <div class="card-feat" data-tags="nuvolo">
+        <div class="feat-left" style="background:linear-gradient(150deg,#162b1c 0%,#0f1f12 100%);">
+          <div>
+            <div class="feat-label">Product Rebrand + Content Rollout — Nuvolo</div>
+            <div class="feat-title">Connected Workplace</div>
+          </div>
+          <div class="feat-badge">Messaging · Pages · Case Studies</div>
+        </div>
+        <div class="feat-right">
+          <div>
+            <p>Nuvolo makes facilities management and space management software built on the ServiceNow platform. The <strong>Connected Workplace rebrand</strong> was led from the ground up, writing the core messaging framework, product landing pages, thought leadership, and customer success stories that brought the new positioning to life across every channel.</p>
+            <div class="feat-chips">
+              <span class="feat-chip">Product Rebrand</span><span class="feat-chip">Messaging Framework</span><span class="feat-chip">Landing Pages</span><span class="feat-chip">Case Studies</span><span class="feat-chip">Thought Leadership</span><span class="feat-chip">ServiceNow</span><span class="feat-chip">Facilities Management</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CoreNet -->
+      <div class="card" data-tags="nuvolo">
+        <div class="card-stripe"></div>
+        <div class="card-head"><div class="ctype">Thought Leadership — Industry Publication</div><div class="ctitle">The Importance (and Fun!) of Interactive Floor Maps</div></div>
+        <div class="card-body">
+          <p class="cdesc">Published in CoreNet Global's The Pulse, this piece made the business case for interactive floor maps in modern workplace management, written for corporate real estate and facilities professionals at a time when hybrid work was reshaping how companies thought about space.</p>
+          <div class="ctags"><span class="tag">CoreNet Global</span><span class="tag">Workplace</span><span class="tag">Space Management</span></div>
+          <div class="card-actions"><a href="https://www.corenetglobal.org/about-corenet-global/the-pulse/the-pulse/2020/08/19/the-importance-(and-fun!)-of-interactive-floor-maps" target="_blank" class="btn-c btn-cf">Read Article <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+        </div>
+      </div>
+
+      <!-- Zen -->
+      <div class="card" data-tags="nuvolo">
+        <div class="card-stripe"></div>
+        <div class="card-head"><div class="ctype">Blog — Connected Workplace</div><div class="ctitle">Zen in the Connected Workplace</div></div>
+        <div class="card-body">
+          <p class="cdesc">A brand-forward blog post exploring what it truly means to work in a connected, frictionless environment, written to introduce and reinforce the Connected Workplace positioning with Nuvolo's target audience of facilities and IT leaders.</p>
+          <div class="ctags"><span class="tag">Connected Workplace</span><span class="tag">Brand Messaging</span><span class="tag">Nuvolo</span></div>
+          <div class="card-actions"><a href="https://www.nuvolo.com/blog/zen-in-the-connected-workplace/" target="_blank" class="btn-c btn-cf">Read Article <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+        </div>
+      </div>
+
+      <!-- Indian Health Services -->
+      <div class="card" data-tags="nuvolo">
+        <div class="card-stripe"></div>
+        <div class="card-head"><div class="ctype">Customer Story — Public Sector / Healthcare</div><div class="ctitle">The Top 5 Reasons Indian Health Services Chose Nuvolo</div></div>
+        <div class="card-body">
+          <p class="cdesc">A customer success story showcasing why Indian Health Services selected Nuvolo's Connected Workplace platform for their facilities and asset management needs across a complex, distributed public sector healthcare environment.</p>
+          <div class="ctags"><span class="tag">Case Study</span><span class="tag">Public Sector</span><span class="tag">Healthcare</span></div>
+          <div class="card-actions"><a href="https://www.nuvolo.com/story/the-top-5-reasons-indian-health-services-chose-nuvolo/" target="_blank" class="btn-c btn-cf">Read Story <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+        </div>
+      </div>
+
+      <!-- High-Tech Gov -->
+      <div class="card" data-tags="nuvolo">
+        <div class="card-stripe"></div>
+        <div class="card-head"><div class="ctype">Customer Story — Public Sector</div><div class="ctitle">A High Tech Government Agency Modernizes Data Center Management</div></div>
+        <div class="card-body">
+          <p class="cdesc">A customer success story detailing how a high-tech government agency modernized their facilities and workplace operations using Nuvolo's Connected Workplace platform, built on ServiceNow.</p>
+          <div class="ctags"><span class="tag">Case Study</span><span class="tag">Government</span><span class="tag">Public Sector</span></div>
+          <div class="card-actions"><a href="https://www.nuvolo.com/story/high-tech-government-agency/" target="_blank" class="btn-c btn-cf">Read Story <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="label">Experience</div>
+    <h2 class="stitle">Career Journey</h2>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-left"><div class="tl-date">Jun 2022<br>Present</div></div><div class="tl-line"></div><div class="tl-dot"></div><div class="tl-right"><div class="tl-role">Senior Content Marketing Manager</div><div class="tl-co">SoftServe — Remote</div><div class="tl-desc">Collaborating with data scientists, engineers, and robotics SMEs to produce whitepapers, case studies, ebooks, video scripts, and ad copy. Annual point person for NVIDIA GTC and Google Next, owning messaging strategy and content development. Translate technical research from non-native English speaking engineers into thought leadership. Built a Sales Enablement AI Agent in Microsoft Copilot to streamline content delivery and accelerate deal support for the sales team.</div></div></div>
+      <div class="tl-item"><div class="tl-left"><div class="tl-date">Oct 2021<br>Apr 2022</div></div><div class="tl-line"></div><div class="tl-dot"></div><div class="tl-right"><div class="tl-role">Senior Content Marketing Manager</div><div class="tl-co">Collibra — Remote</div><div class="tl-desc">Owned editorial calendar and content audit program. Implemented SEO strategies to improve organic traffic and rankings. Managed a team of writers and copy editors ensuring consistent brand voice across all deliverables.</div></div></div>
+      <div class="tl-item"><div class="tl-left"><div class="tl-date">Jan 2021<br>Oct 2021</div></div><div class="tl-line"></div><div class="tl-dot"></div><div class="tl-right"><div class="tl-role">Senior Product Marketing Manager</div><div class="tl-co">Nuvolo — Paramus, NJ</div><div class="tl-desc">Led the <strong>Connected Workplace rebrand</strong>, writing the core messaging framework, product landing pages, and thought leadership that brought Nuvolo's new positioning to market. Managed product release communication plans, ran the customer webinar series end-to-end, and developed the customer success story program. Campaign work drove a <strong>20% increase in demo requests</strong> and improved pipeline engagement.</div></div></div>
+      <div class="tl-item"><div class="tl-left"><div class="tl-date">Jun 2019<br>Dec 2020</div></div><div class="tl-line"></div><div class="tl-dot"></div><div class="tl-right"><div class="tl-role">Senior Content Marketing Manager</div><div class="tl-co">Nuvolo — Paramus, NJ</div><div class="tl-desc">Led organic SEO program driving inbound leads and website traffic for Nuvolo's facilities and space management platform, built on ServiceNow. Designed content roadmap, editorial schedule, and messaging framework. Produced case studies across industries, whitepapers, and general content. Wrote thought leadership articles published in industry outlets.</div></div></div>
+      <div class="tl-item"><div class="tl-left"><div class="tl-date">Oct 2018<br>Jun 2019</div></div><div class="tl-line"></div><div class="tl-dot"></div><div class="tl-right"><div class="tl-role">Account Executive</div><div class="tl-co">Pepperi Inc. — New York, NY</div><div class="tl-desc">Built demand-generation campaigns, delivered compelling sales presentations and product demos, managed full sales cycle from lead generation through contract negotiations.</div></div></div>
+      <div class="tl-item"><div class="tl-left"><div class="tl-date">Sep 2016<br>Mar 2018</div></div><div class="tl-line"></div><div class="tl-dot"></div><div class="tl-right"><div class="tl-role">AVP, Marketing &amp; Sales</div><div class="tl-co">Decusoft, LLC — Ramsey, NJ</div><div class="tl-desc">Doubled the sales pipeline through marketing programs including an educational webinar series, monthly product presentations, and a quarterly newsletter. Managed annual client advisory conference end-to-end.</div></div></div>
+      <div class="tl-item"><div class="tl-left"><div class="tl-date">Dec 2012<br>Sep 2016</div></div><div class="tl-line"></div><div class="tl-dot"></div><div class="tl-right"><div class="tl-role">Business Development Leader</div><div class="tl-co">Cisco Data &amp; Analytics Software — New York, NY</div><div class="tl-desc">Developed Cisco customer accounts with the Data Virtualization portfolio following the Composite Software acquisition. Prospected C-level executives across NY Metro and New England, coordinated executive events, and exceeded sales targets.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="label" style="text-align:center;">Let's Connect</div>
+    <h2 class="stitle" style="text-align:center;">Get in Touch</h2>
+    <p class="sdesc" style="margin:0 auto 32px;text-align:center;">Looking to connect about a senior marketing role, a collaboration, or a project? I would love to hear from you.</p>
+    <div class="contact-links">
+      <a href="mailto:leslieoc@outlook.com" class="contact-link"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>leslieoc@outlook.com</a>
+      <a href="https://www.linkedin.com/in/leslieoc/" target="_blank" class="contact-link"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2025 Leslie Ann O'Connell &nbsp;·&nbsp; Product &amp; Content Marketing</footer>
+
+<script>
+function filterCards(tag,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#portGrid>[data-tags]').forEach(c=>{
+    const show=tag==='all'||c.dataset.tags.includes(tag);
+    c.style.display=show?'':'none';
+    if(c.classList.contains('card-feat'))c.style.gridColumn=show?'1/-1':'';
+    if(c.classList.contains('card-wide'))c.style.gridColumn=show?'span 2':'';
+  });
+}
+</script>
+</body>
+</html>
